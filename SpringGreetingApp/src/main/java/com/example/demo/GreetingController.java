@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.service.GreetingService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -29,4 +30,13 @@ public class GreetingController {
     public String deleteGreeting() {
         return "Greeting deleted successfully.";
     }
+
+    //UC2
+    private final GreetingService greetingService;
+
+    public GreetingController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    
 }
