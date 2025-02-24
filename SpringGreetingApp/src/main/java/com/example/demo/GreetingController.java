@@ -1,7 +1,10 @@
 package com.example.demo;
 
+import com.example.demo.model.Greeting;
 import com.example.demo.service.GreetingService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("uc1/greeting")
@@ -50,5 +53,9 @@ public class GreetingController {
     public String getGreetingById(@PathVariable Long id) {
         return greetingService.getGreetingById(id);
     }
-    
+
+    @GetMapping("/all")
+    public List<Greeting> getAllGreetings() {
+        return greetingService.getAllGreetings();
+    }
 }
